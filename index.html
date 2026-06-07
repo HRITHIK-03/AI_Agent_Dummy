@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABT Food Distributor - Interactive Voice Demo</title>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+            background: linear-gradient(to right, #f8fafc, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .instructions {
+            text-align: left;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .instructions ol {
+            margin: 0;
+            padding-left: 1.25rem;
+            color: #cbd5e1;
+        }
+
+        .instructions li {
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .instructions li:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ABT Voice Portal</h1>
+        <p>This sandbox connects directly to our real-time wholesale beverage order backend using Llama 3.3 via Groq and FastAPI streaming pipelines.</p>
+        
+        <div class="instructions">
+            <h3>How to Start Your Interview Demo</h3>
+            <ol>
+                <li>Look for the floating blue phone icon in the bottom-right corner of this webpage.</li>
+                <li>Click the icon and grant microphone permissions if prompted by your browser.</li>
+                <li>Speak directly to the agent to place, negotiate, or manage fruit juice wholesale volumes.</li>
+                <li>Watch your local terminal logs to see live pipeline execution events streaming frame by frame.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Vapi Web Widget Integration Snippet -->
+    <script>
+        (function (d, t) {
+            var g = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+            g.defer = true;
+            g.async = true;
+            s.parentNode.insertBefore(g, s);
+            
+            g.onload = function () {
+                window.vapiSDK.run({
+                    
+                    apiKey: "4011373d-6992-423c-aa1a-dc18fe8e6699", 
+                    
+                    
+                    assistant: "fead61a1-82bf-45fb-bc89-cf73d4d35d33", 
+                    
+                    config: {
+                        position: "bottom-right",
+                        offset: "40px",
+                        width: "56px",
+                        height: "56px",
+                        idle: {
+                            type: "round",
+                            color: "rgb(56, 189, 248)",
+                            icon: "https://unpkg.com/lucide-static@0.321.0/icons/phone.svg",
+                        },
+                        loading: {
+                            type: "round",
+                            color: "rgb(30, 41, 59)",
+                            icon: "https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg",
+                        },
+                        active: {
+                            type: "round",
+                            color: "rgb(239, 68, 68)",
+                            icon: "https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg",
+                        }
+                    }
+                });
+            };
+        })(document, "script");
+    </script>
+</body>
+</html>
